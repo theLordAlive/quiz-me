@@ -1,0 +1,182 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>JS Paint Application Project</title>
+	<link rel="icon" href="favicon.ico" type="image/x-icon">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script type="text/javascript" src="js/javascript.js"></script>
+		
+</head>
+<body><!--onload="open()"-->
+	<center><canvas id="canvasOne" width="1000" height="200" style="display:none;">Your browser doesn\'t support HTML5 Canvas.</canvas></center>
+	<div id="page">
+		<div id="header"><!--debut du header-->
+			<a href="myQuiz.html" id="logo"><img src="images/logo.png" alt="Logo"></a>
+			<ul><!--debut de la liste principale-->
+				<li class="current">
+					<a href="myQuiz.html">Restart</a>
+					<ul>
+						<li>
+							<a href="#" id="pause" onclick="menu(0)">Pause</a>
+						</li>
+						<li>
+							<a href="#" id="exit" onclick="menu(1)">Exit</a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="#">Beginner</a>
+					<ul>
+						<li>
+							<a href="#" id="level11" onclick="initializer(11)">Five Questions</a>
+						</li>
+						<li>
+							<a href="#" id="level12" onclick="initializer(12)">Ten Questions</a>
+						</li>
+						<li>
+							<a href="#" id="level13" onclick="initializer(13)">Max Questions</a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="#">Normal</a>
+					<ul>
+						<li>
+							<a href="#" id="level21" onclick="initializer(21)">Five Questions</a>
+						</li>
+						<li>
+							<a href="#" id="level22" onclick="initializer(22)">Ten Questions</a>
+						</li>
+						<li>
+							<a href="#" id="level23" onclick="initializer(23)">Max Questions</a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="#">Genius</a>
+					<ul>
+						<li>
+							<a href="#" id="level31" onclick="initializer(31)">Five Questions</a>
+						</li>
+						<li>
+							<a href="#" id="level32" onclick="initializer(32)">Ten Questions</a>
+						</li>
+						<li>
+							<a href="#" id="level33" onclick="initializer(33)">Max Questions</a>
+						</li>
+					</ul>
+				</li>
+				
+				<li>
+					<a href="#"> Color </a>
+					<ul>
+						<li>
+							<a href="#" id="level31" onclick="personalize()"><label><input type="color" id="color"> Personalize your design</label> </a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="#" id="about" onclick="about()">About us</a>
+				</li>
+			</ul><!--fin de la liste principale-->
+		</div><!--fin du header-->
+		<div id="body">
+			<div class="header">
+				<center>
+					<marquee><p align="center" id="content" style="font-size:60px;line-height:80px;color:#ffffa0;background-color:  #000f00;" title="Start a game !" dir="rtl">Enjoy the App ! Feed your brain ! Enrich your mind ! Enjoy the App ! Feed your brain ! Enrich your mind ! Enjoy the App ! Feed your brain ! Enrich your mind ! Enjoy the App ! Feed your brain ! Enrich your mind ! Enjoy the App ! Feed your brain ! Enrich your mind ! Enjoy the App ! Feed your brain ! Enrich your mind ! Enjoy the App ! Feed your brain ! Enrich your mind ! Enjoy the App ! Feed your brain ! Enrich your mind ! Enjoy the App ! Feed your brain ! Enrich your mind ! Enjoy the App ! Feed your brain ! Enrich your mind ! Enjoy the App ! Feed your brain ! Enrich your mind ! Enjoy the App ! Feed your brain ! Enrich your mind ! Enjoy the App ! Feed your brain ! Enrich your mind ! Enjoy the App ! Feed your brain ! Enrich your mind ! Enjoy the App ! Feed your brain ! Enrich your mind ! Enjoy the App ! Feed your brain ! Enrich your mind ! Enjoy the App ! Feed your brain ! Enrich your mind ! Enjoy the App ! Feed your brain ! Enrich your mind ! Enjoy the App ! Feed your brain ! Enrich your mind ! Enjoy the App ! Feed your brain ! Enrich your mind ! Enjoy the App ! Feed your brain ! Enrich your mind ! Enjoy the App ! Feed your brain ! Enrich your mind ! Enjoy the App ! Feed your brain ! Enrich your mind ! Enjoy the App ! Feed your brain ! Enrich your mind ! Enjoy the App ! Feed your brain ! Enrich your mind ! Enjoy the App ! Feed your brain ! Enrich your mind ! Enjoy the App ! Feed your brain ! Enrich your mind ! Enjoy the App ! Feed your brain ! Enrich your mind ! Enjoy the App ! Feed your brain ! Enrich your mind ! Enjoy the App ! Feed your brain ! Enrich your mind !</p></marquee>
+					<div class="starter no_bord" id="starter" width="500px" height="auto">
+						<p> Choose an option in the menu above and start playing !</p>
+						<p id="report"><marquee>Enjoy the App ! Feed your brain ! Enrich your mind ! Enjoy the App ! Feed your brain ! Enrich your mind ! Enjoy the App ! Feed your brain ! Enrich your mind ! Enjoy the App ! Feed your brain ! Enrich your mind ! Enjoy the App ! Feed your brain ! Enrich your mind ! Enjoy the App ! Feed your brain ! Enrich your mind ! Enjoy the App ! Feed your brain ! Enrich your mind ! Enjoy the App ! Feed your brain ! Enrich your mind ! Enjoy the App ! Feed your brain ! Enrich your mind ! Enjoy the App ! Feed your brain ! Enrich your mind ! Enjoy the App ! Feed your brain ! Enrich your mind ! Enjoy the App ! Feed your brain ! Enrich your mind ! Enjoy the App ! Feed your brain ! Enrich your mind ! Enjoy the App ! Feed your brain ! Enrich your mind ! Enjoy the App ! Feed your brain ! Enrich your mind ! Enjoy the App ! Feed your brain ! Enrich your mind ! Enjoy the App ! Feed your brain ! Enrich your mind ! Enjoy the App ! Feed your brain ! Enrich your mind ! Enjoy the App ! Feed your brain ! Enrich your mind ! Enjoy the App ! Feed your brain ! Enrich your mind ! Enjoy the App ! Feed your brain ! Enrich your mind ! Enjoy the App ! Feed your brain ! Enrich your mind ! Enjoy the App ! Feed your brain ! Enrich your mind ! Enjoy the App ! Feed your brain ! Enrich your mind ! Enjoy the App ! Feed your brain ! Enrich your mind ! Enjoy the App ! Feed your brain ! Enrich your mind ! Enjoy the App ! Feed your brain ! Enrich your mind ! Enjoy the App ! Feed your brain ! Enrich your mind ! Enjoy the App ! Feed your brain ! Enrich your mind ! Enjoy the App ! Feed your brain ! Enrich your mind !</marquee>
+						&#43;</p>
+						<marquee>
+							<img src="images/pic (1).jpg" class="pict"/>
+							<img src="images/pic (2).jpg" class="pict"/>
+							<img src="images/pic (3).jpg" class="pict"/>
+							<img src="images/pic (4).jpg" class="pict"/>
+							<img src="images/pic (5).jpg" class="pict"/>
+							<img src="images/pic (6).jpg" class="pict"/>
+							<img src="images/pic (7).jpg" class="pict"/>
+							<img src="images/pic (8).jpg" class="pict"/>
+							<img src="images/pic (9).jpg" class="pict"/>
+							<img src="images/pic (10).jpg" class="pict"/>
+							<img src="images/pic (11).jpg" class="pict"/>
+							<img src="images/pic (12).jpg" class="pict"/>
+							<img src="images/pic (13).jpg" class="pict"/>
+							<img src="images/pic (14).jpg" class="pict"/>
+							<img src="images/pic (15).jpg" class="pict"/>
+							<img src="images/pic (16).jpg" class="pict"/>
+							<img src="images/pic (17).jpg" class="pict"/>
+							<img src="images/pic (18).jpg" class="pict"/>
+							<img src="images/pic (19).jpg" class="pict"/>
+							<img src="images/pic (20).jpg" class="pict"/>
+							<img src="images/pic (21).jpg" class="pict"/>
+							<img src="images/pic (22).jpg" class="pict"/>
+							<img src="images/pic (23).jpg" class="pict"/>
+							<img src="images/pic (24).jpg" class="pict"/>
+							<img src="images/pic (25).jpg" class="pict"/>
+							<img src="images/pic (26).jpg" class="pict"/>
+							<img src="images/pic (27).jpg" class="pict"/>
+							<img src="images/pic (28).jpg" class="pict"/>
+							<img src="images/pic (29).jpg" class="pict"/>
+							<img src="images/pic (30).jpg" class="pict"/>
+							<img src="images/pic (31).jpg" class="pict"/>
+							<img src="images/pic (32).jpg" class="pict"/>
+							<img src="images/pic (33).jpg" class="pict"/>
+							<img src="images/pic (34).jpg" class="pict"/>
+							<img src="images/pic (35).jpg" class="pict"/>
+							<img src="images/pic (36).jpg" class="pict"/>
+							<img src="images/pic (37).jpg" class="pict"/>
+							<img src="images/pic (38).jpg" class="pict"/>
+							<img src="images/pic (39).jpg" class="pict"/>
+						</marquee>
+					</div>
+				</center>
+				<div class="main" width="auto" height="auto"></div>
+					<center>
+						<div class="referee hidden">
+							<strong><p id="chronograph">Check well your Internet connection !</p></strong>
+							<strong><p id="score">0000</p></strong>
+						</div>
+						<div class="questions hidden" id="qcontent">
+							<p id="question"></p>
+							<hr>
+							<p id="tip"></p>
+
+						</div>
+						<div class="assertion hidden">
+							<input type="button" class="button" value="A" onclick="check('a')">
+							<input type="button" class="button" value="B" onclick="check('b')">
+							<input type="button" class="button" value="C" onclick="check('c')">
+							<input type="button" class="button" value="D" onclick="check('d')">
+							<p id="notice"></p>
+						</div>
+					</center>
+				</div>
+			</div>
+			
+			
+		<div id="footer">
+			<div>
+				<div class="report">
+					<h1>Previous Question</h1>
+					<p id="endreport">Previous questions stand here !</p>
+				</div>
+				
+				<div>
+					<h1>Connect</h1>
+					<a href="http://www.gmail.com/" target="_blank" id="mail">Email us</a>
+					<a href="http://www.facebook.com/" target="_blank" id="facebook">Facebook</a>
+					<a href="http://www.twitter.com/" target="_blank" id="twitter">Twitter</a>
+					<a href="http://www.googleplus.com/" target="_blank" id="googleplus">Google&#43;</a>
+				</div>
+			</div>
+			<p>
+				Elijah & Elisha &copy; 2016  | All Rights Reserved
+			</p>
+		</div>
+	</div>
+	
+   
+</body>
+</html>
